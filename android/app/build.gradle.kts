@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.proyecto_hibridas"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 35  // Asegúrate de que esta línea esté configurada correctamente
     ndkVersion = "27.0.12077973"
 
     compileOptions {
@@ -24,8 +24,8 @@ android {
         applicationId = "com.example.proyecto_hibridas"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        minSdk = 23  // Actualiza esta línea
+        targetSdk = 35  // Asegúrate de que esta línea esté configurada correctamente
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
