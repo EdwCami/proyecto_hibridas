@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../models/product.dart';
 import 'product_detail_screen.dart';
 
@@ -6,19 +7,26 @@ class HomeScreen extends StatelessWidget {
   final List<Product> products = [
     Product(
       id: '1',
-      name: 'Producto 1',
-      description: 'Descripción del producto 1',
-      price: 29.99,
-      imageUrl: 'https://via.placeholder.com/150',
+      name: 'CASCO CERTIFICADO SPARTAN DRAKEN NEGRO ROJO',
+      description: 'Material: APS (Advance polycarbonate shell), Visor: Policarbonato 3mm, Tapizado: Microfibra de poliéster antibacterial, Sistema de retención: Cierre micrométrico, Certificación: Ece 2205.',
+      price: 250000,
+      imageUrl: 'assets/images/imagen1.jpeg',
     ),
     Product(
       id: '2',
-      name: 'Producto 2',
-      description: 'Descripción del producto 2',
-      price: 49.99,
-      imageUrl: 'https://via.placeholder.com/150',
+      name: 'CASCO CERTIFICADO SPARTAN DRAKEN NEGRO AZUL',
+      description: 'Marca: Spartan, Tipo: Integral, Material: APS (Advance polycarbonate shell), Visor: Policarbonato 3mm, Tapizado: Microfibra de poliéster antibacterial, Sistema de retención: Cierre micrométrico, Certificación: Ece 2205, Incluye tula en poliéster, Incluye película antiempañante, Peso: 1450g +/-',
+      price: 250000,
+      imageUrl: 'assets/images/imagen2.jpeg',
     ),
   ];
+
+  HomeScreen({super.key});
+
+  String formatPrice(int price) {
+    final formatter = NumberFormat.decimalPattern();
+    return formatter.format(price);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,12 +51,20 @@ class HomeScreen extends StatelessWidget {
             );
           },
           child: GridTile(
-            child: Image.network(products[i].imageUrl, fit: BoxFit.cover),
+            child: Image.asset(products[i].imageUrl, fit: BoxFit.cover),
             footer: GridTileBar(
-              backgroundColor: Colors.black87,
-              title: Text(
-                products[i].name,
-                textAlign: TextAlign.center,
+            backgroundColor: Colors.black87,
+            title: Column(
+            children: [
+                  Text(
+                    products[i].name,
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '\$${formatPrice(products[i].price)}',
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
             ),
           ),

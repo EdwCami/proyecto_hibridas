@@ -15,7 +15,10 @@ class ProductDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.network(product.imageUrl),
+            if (product.imageUrl.startsWith('http'))
+              Image.network(product.imageUrl)
+            else
+              Image.asset(product.imageUrl),
             SizedBox(height: 10),
             Text(
               '\$${product.price}',
