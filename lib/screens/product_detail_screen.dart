@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/product.dart';
+import '../models/cart.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   final Product product;
 
-  ProductDetailScreen({required this.product});
+  const ProductDetailScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<Cart>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: Text(product.name),
@@ -32,6 +35,19 @@ class ProductDetailScreen extends StatelessWidget {
               product.description,
               textAlign: TextAlign.center,
               softWrap: true,
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                cart.addItem(product);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Esta en tu carrito!'),
+                    duration: Duration(seconds: 2),
+                  ),
+                );
+              },
+              child: Text('Agregar al carrito'),
             ),
           ],
         ),
