@@ -1,4 +1,4 @@
-package com.example.proyecto_hibridas
+package com.CamiloEsteban.CamES
 
 import io.flutter.embedding.android.FlutterActivity
 

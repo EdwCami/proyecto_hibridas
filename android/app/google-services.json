@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "94146139278",
+    "project_id": "cam-es-bcf09",
+    "storage_bucket": "cam-es-bcf09.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94146139278:android:97052ce0b6d524b75a25df",
+        "android_client_info": {
+          "package_name": "com.CamiloEsteban.CamES"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANqJBCz_hbTetI_XMYxU2RqUOJs3AarDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
