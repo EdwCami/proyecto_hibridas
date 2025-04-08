@@ -15,9 +15,9 @@ class LoginScreen extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child:Image.asset(
-                'assets/images/Logo.jpg', // Asegúrate de tener esta imagen en tu carpeta de assets
-                height: 100,
+                child: Image.asset(
+                  'assets/images/Logo.jpg', // Asegúrate de tener esta imagen en tu carpeta de assets
+                  height: 100,
                 ),
               ),
               SizedBox(height: 20),
